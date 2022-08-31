@@ -1,9 +1,17 @@
 {
-    "name": "laravel/laravel",
+    "name": "skrypt-nl/laravel-api-boilerplate",
     "type": "project",
-    "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
-    "license": "MIT",
+    "description": "A simple API boilerplate built with Laravel.",
+    "keywords": ["framework", "laravel", "skrypt"],
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Rick Tibbe",
+            "email": "rick@skrypt.nl",
+            "homepage": "https://www.skrypt.nl",
+            "role": "Founder"
+        }
+    ],
     "require": {
         "php": "^8.0.2",
         "guzzlehttp/guzzle": "^7.2",
