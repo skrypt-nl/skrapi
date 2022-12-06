@@ -3,7 +3,7 @@
 return [
     'namespaces' => [
         'models' => 'App\\Models\\',
-        'controllers' => 'App\\Http\\Controllers\\',
+        'controllers' => 'App\\Http\\Controllers\\v1\\',
     ],
     'auth' => [
         'guard' => 'api',
