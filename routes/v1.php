@@ -1,5 +1,9 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+use Orion\Facades\Orion;
+use App\Http\Controllers\v1\UsersController;
+
 Route::get('/', function() {
     return response()->json([
         'message' => 'Successfully connected!',
@@ -11,3 +15,4 @@ Route::post('/login', 'AuthController@login');
 Route::post('/logout', 'AuthController@logout');
 Route::post('/register', 'AuthController@register');
 
+Orion::resource('users', UsersController::class);
