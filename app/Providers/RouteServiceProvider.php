@@ -17,7 +17,7 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    public const HOME = '/home';
+    public const HOME = '/telescope';
 
     /**
      * Define your route model bindings, pattern filters, and other route configuration.
@@ -27,6 +27,13 @@ class RouteServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->configureRateLimiting();
+
+        $this->routes(function () {
+            /*** Auth mapping ***/
+            Route::middleware(['web'])
+                ->namespace("auth")
+                ->group(base_path('routes/web.php'));
+        });
     }
 
     /**
