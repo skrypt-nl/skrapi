@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Traits\Uuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Passport\HasApiTokens;
@@ -11,7 +12,7 @@ use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable
 {
-    use Uuids, HasApiTokens, HasFactory, Notifiable, HasRoles;
+    use Uuids, HasApiTokens, HasFactory, Notifiable, HasRoles, SoftDeletes;
 
     public string $guard_name = 'api';
 
