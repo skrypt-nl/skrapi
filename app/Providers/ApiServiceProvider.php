@@ -23,7 +23,7 @@ class ApiServiceProvider extends ServiceProvider
 
                 Route::any('/{any?}', function ($version) use ($api_version) {
                     return response(
-                        json_encode(['error' => 'Invalid endpoint.', 'api_version' => $api_version]),
+                        json_encode(['message' => 'Invalid endpoint.', 'api_version' => $api_version]),
                         404
                     )->header(
                         'Content-Type',
@@ -38,8 +38,12 @@ class ApiServiceProvider extends ServiceProvider
             'prefix'     => strtolower($namespace_prefix) . '{version}',
         ], function ($router) {
             Route::any('/{any?}', function ($version) {
+                $valid_version_syntax = preg_match("/v\d+$/", $version);
+                $message =  $valid_version_syntax ? 'API version does not exist.' : 'Invalid endpoint.';
+                $version =  $valid_version_syntax ? $version : null;
+
                 return response(
-                    json_encode(['error' => 'API version does not exist.', 'api_version' => $version]),
+                    json_encode(['message' => $message, 'api_version' => $version]),
                     404
                 )->header(
                     'Content-Type',
