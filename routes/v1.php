@@ -16,4 +16,4 @@ Route::post('/login', 'AuthController@login');
 Route::post('/logout', 'AuthController@logout')->middleware('auth:api');
 Route::post('/register', 'AuthController@register');
 
-Orion::resource('users', UsersController::class);
+Orion::resource('users', UsersController::class)->withSoftDeletes();

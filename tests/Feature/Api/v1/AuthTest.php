@@ -23,7 +23,7 @@ class AuthTest extends TestCase
      *
      * @return void
      */
-    public function testFailedLogin(): void
+    public function test_failed_login_attempt(): void
     {
         $request = [
             'email' => $this->user->email,
@@ -43,7 +43,7 @@ class AuthTest extends TestCase
      *
      * @return void
      */
-    public function testSuccessfulLogin(): void
+    public function test_successful_login_attempt(): void
     {
         $request = [
             'email' => $this->user->email,
@@ -70,7 +70,7 @@ class AuthTest extends TestCase
      *
      * @return void
      */
-    public function testSuccessfulLogout(): void
+    public function test_successful_logout_attempt(): void
     {
         $request = [
             'email' => $this->user->email,
@@ -95,7 +95,7 @@ class AuthTest extends TestCase
      *
      * @return void
      */
-    public function testFailedLogout(): void
+    public function test_failed_logout_attempt(): void
     {
         $response = $this->post('/v1/logout');
         $response->assertStatus(401);

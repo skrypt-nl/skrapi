@@ -15,6 +15,7 @@ class RoleAndPermissionSeeder extends Seeder
      */
     public function run(): void
     {
+        Permission::firstOrCreate(['name' => 'users.*', 'guard_name' => 'api']);
         Permission::firstOrCreate(['name' => 'users.read', 'guard_name' => 'api']);
         Permission::firstOrCreate(['name' => 'users.create', 'guard_name' => 'api']);
         Permission::firstOrCreate(['name' => 'users.update', 'guard_name' => 'api']);
@@ -24,7 +25,7 @@ class RoleAndPermissionSeeder extends Seeder
 
         $adminRole = Role::firstOrCreate(['name' => 'Admin', 'guard_name' => 'api']);
         $adminRole->givePermissionTo([
-            'users.read',
+            'users.*',
         ]);
 
         Role::firstOrCreate(['name' => 'User', 'guard_name' => 'api']);
