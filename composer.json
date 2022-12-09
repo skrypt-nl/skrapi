@@ -1,15 +1,14 @@
 {
-    "name": "skrypt-nl/laravel-api-boilerplate",
-    "type": "project",
+    "name": "skrypt-nl/skrapi",
+    "type": "template",
     "description": "A simple API boilerplate built with Laravel.",
     "keywords": ["framework", "laravel", "skrypt"],
-    "license": "proprietary",
+    "license": "MIT",
     "authors": [
         {
-            "name": "Rick Tibbe",
-            "email": "rick@skrypt.nl",
-            "homepage": "https://www.skrypt.nl",
-            "role": "Founder"
+            "name": "Skrypt",
+            "email": "info@skrypt.nl",
+            "homepage": "https://www.skrypt.nl"
         }
     ],
     "require": {
